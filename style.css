@@ -1,0 +1,87 @@
+:root {
+  --pine: #2a5a48;
+  --pine-dark: #1f4436;
+  --bone: #faf6ea;
+  --panel: #efeadb;
+  --terra: #c8573b;
+  --ink: #111;
+  --muted: #3d3d3d;
+  --rule: #cfc8b4;
+}
+* { box-sizing: border-box; }
+html { font-size: 20px; }
+body {
+  margin: 0;
+  background: var(--bone);
+  color: var(--ink);
+  font-family: Arial, "Liberation Sans", Helvetica, sans-serif;
+  line-height: 1.5;
+}
+a { color: var(--pine); }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+header.top { background: var(--pine); color: var(--bone); }
+header.top .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding-top: 14px; padding-bottom: 14px; }
+.brand { color: var(--bone); text-decoration: none; font-weight: 700; letter-spacing: .06em; font-size: 1rem; }
+.top-phone { color: var(--bone); font-weight: 700; font-size: 1.1rem; text-decoration: none; white-space: nowrap; }
+.top-phone span { font-weight: 400; font-size: .85rem; margin-right: 6px; }
+
+nav.sub { background: var(--pine-dark); }
+nav.sub .wrap { display: flex; gap: 24px; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; }
+nav.sub a { color: var(--bone); font-size: .9rem; }
+
+.hero { background: var(--pine); color: var(--bone); padding: 28px 0 40px; }
+.hero .wrap { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
+.hero h1 { font-size: 2.1rem; line-height: 1.15; margin: 0 0 12px; }
+.hero p { margin: 0 0 10px; font-size: 1.05rem; }
+.hero img { width: 190px; height: 190px; border-radius: 50%; border: 4px solid var(--bone); object-fit: cover; }
+.kicker { display: inline-block; border-left: 5px solid var(--terra); padding-left: 10px; font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; }
+
+.btn { display: inline-block; background: var(--terra); color: #fff; font-weight: 700; text-decoration: none; padding: 14px 22px; border-radius: 6px; font-size: 1.05rem; margin-top: 8px; }
+
+main section { padding: 34px 0 10px; }
+main section + section { border-top: 1px solid var(--rule); }
+h2 { color: var(--pine); font-size: 1.5rem; margin: 0 0 14px; line-height: 1.2; }
+h3 { font-size: 1.1rem; margin: 18px 0 6px; }
+ul { padding-left: 1.2em; }
+li { margin-bottom: 6px; }
+
+table.prices { width: 100%; border-collapse: collapse; margin: 6px 0 12px; }
+table.prices td { padding: 12px 4px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+table.prices td.p { text-align: right; font-weight: 700; white-space: nowrap; color: var(--pine); font-size: 1.15rem; }
+table.prices small { display: block; color: var(--muted); font-size: .85rem; }
+
+.panel { background: var(--panel); border-left: 6px solid var(--terra); padding: 16px 20px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+.panel p { margin: 0 0 6px; }
+.panel p:last-child { margin-bottom: 0; }
+
+.steps { list-style: none; padding: 0; counter-reset: s; }
+.steps li { counter-increment: s; position: relative; padding-left: 56px; margin-bottom: 18px; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 38px; height: 38px; border-radius: 50%; background: var(--pine); color: var(--bone); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.steps strong { display: block; font-size: 1.1rem; }
+
+.big-number { font-size: 1.6rem; font-weight: 700; color: var(--pine); text-decoration: none; }
+dl.numbers dt { font-weight: 700; margin-top: 14px; }
+dl.numbers dd { margin: 2px 0 0; }
+
+.card-list { display: grid; gap: 16px; }
+.card-item { background: #fff; border: 1px solid var(--rule); border-radius: 8px; padding: 18px 20px; }
+.card-item .tag { font-size: .8rem; font-weight: 700; letter-spacing: .06em; color: var(--terra); text-transform: uppercase; }
+.card-item h3 { margin-top: 4px; }
+.soon { color: var(--muted); }
+
+footer { background: var(--pine); color: var(--bone); margin-top: 40px; padding: 26px 0; font-size: .9rem; }
+footer a { color: var(--bone); }
+footer p { margin: 0 0 6px; }
+
+@media (max-width: 640px) {
+  html { font-size: 19px; }
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero img { width: 150px; height: 150px; order: -1; }
+  .hero h1 { font-size: 1.75rem; }
+}
+@media print {
+  header.top, nav.sub, footer, .btn { display: none; }
+  body { background: #fff; }
+}
